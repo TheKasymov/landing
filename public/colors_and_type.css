@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════
+   GUARDIAN — Solana Transaction Firewall
+   Colors & Type Foundations
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ─── Surfaces (dark-only system) ─────────────── */
+  --bg-primary:        #0B0F19;   /* page bg, deepest */
+  --bg-card:           #111827;   /* cards, sidebar */
+  --bg-card-hover:     #1F2937;   /* hover state */
+  --bg-elevated:       #1F2937;   /* modals, dropdowns */
+
+  /* ─── Borders ─────────────────────────────────── */
+  --border:            #1F2937;   /* default 1px hairline */
+  --border-hover:      #374151;   /* hover/focus border */
+  --border-strong:     #4B5563;   /* emphasized */
+
+  /* ─── Text ────────────────────────────────────── */
+  --text-primary:      #F9FAFB;   /* headings, body */
+  --text-secondary:    #9CA3AF;   /* labels, captions */
+  --text-muted:        #6B7280;   /* deemphasized, placeholders */
+
+  /* ─── Risk-tier semantic colors (the brand's core) ─── */
+  --green:             #22C55E;   /* SAFE — risk 0–30 */
+  --green-dim:         rgba(34,197,94,0.15);
+  --green-border:      rgba(34,197,94,0.30);
+
+  --yellow:            #EAB308;   /* WARN — risk 31–70 */
+  --yellow-dim:        rgba(234,179,8,0.15);
+  --yellow-border:     rgba(234,179,8,0.30);
+
+  --red:               #EF4444;   /* DANGER — risk 71–100 */
+  --red-dim:           rgba(239,68,68,0.15);
+  --red-border:        rgba(239,68,68,0.30);
+
+  /* ─── Brand & accent ──────────────────────────── */
+  --blue:              #3B82F6;   /* primary action, brand */
+  --blue-dim:          rgba(59,130,246,0.15);
+  --blue-border:       rgba(59,130,246,0.30);
+
+  --purple:            #A855F7;   /* Solana accent (used in gradient) */
+  --purple-dim:        rgba(168,85,247,0.15);
+
+  /* ─── Solana brand gradient (used sparingly, for hero/logo) ─── */
+  --gradient-solana:   linear-gradient(135deg, #3B82F6 0%, #A855F7 100%);
+
+  /* ─── Type ────────────────────────────────────── */
+  --font-sans:         'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:         'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* Type scale — Inter */
+  --fs-display:        2rem;       /* 32px — page H1 (rare) */
+  --fs-h2:             1.5rem;     /* 24px — section title (text-2xl) */
+  --fs-h3:             1.125rem;   /* 18px — card title (text-lg) */
+  --fs-body:           0.875rem;   /* 14px — default body (text-sm) */
+  --fs-label:          0.75rem;    /* 12px — labels, meta (text-xs) */
+  --fs-tiny:           0.625rem;   /* 10px — eyebrows, badges */
+  --fs-mono-sm:        0.75rem;    /* 12px — addresses, hashes */
+  --fs-stat:           1.5rem;     /* 24px — KPI numbers */
+  --fs-stat-lg:        2rem;       /* 32px — risk score numbers */
+
+  /* Weights */
+  --fw-regular:        400;
+  --fw-medium:         500;
+  --fw-semibold:       600;
+  --fw-bold:           700;
+  --fw-black:          800;
+
+  /* Tracking */
+  --tracking-tight:    -0.025em;   /* applied to logo + display */
+  --tracking-wide:     0.05em;     /* applied to eyebrow labels */
+
+  /* Line height */
+  --lh-tight:          1.2;
+  --lh-snug:           1.4;
+  --lh-normal:         1.6;
+
+  /* ─── Spacing scale (Tailwind-aligned, used in source) ─── */
+  --space-1:           0.25rem;    /*  4px */
+  --space-2:           0.5rem;     /*  8px */
+  --space-3:           0.75rem;    /* 12px */
+  --space-4:           1rem;       /* 16px */
+  --space-5:           1.25rem;    /* 20px — card padding */
+  --space-6:           1.5rem;     /* 24px — section gap */
+  --space-8:           2rem;       /* 32px */
+
+  /* ─── Radii ───────────────────────────────────── */
+  --r-sm:              0.5rem;     /*  8px — inputs, small buttons */
+  --r-md:              0.625rem;   /* 10px — popup cards */
+  --r-lg:              0.75rem;    /* 12px — DEFAULT card radius (rounded-xl) */
+  --r-pill:            999px;      /* badges, status dots */
+
+  /* ─── Shadows (subtle on dark UI) ─────────────── */
+  --shadow-sm:         0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md:         0 4px 6px -1px rgba(0,0,0,0.5);
+  --shadow-lg:         0 10px 15px -3px rgba(0,0,0,0.5);
+  --shadow-glow-blue:  0 4px 12px rgba(59,130,246,0.4);
+  --shadow-glow-green: 0 4px 12px rgba(34,197,94,0.4);
+  --shadow-glow-red:   0 4px 12px rgba(239,68,68,0.4);
+
+  /* ─── Motion ──────────────────────────────────── */
+  --t-fast:            150ms;
+  --t-base:            300ms;
+  --ease-default:      cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Base resets ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Semantic type roles ───────────────────────── */
+.h1, h1 {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+}
+
+.h2, h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+}
+
+.h3, h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+}
+
+.body, p {
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+  line-height: var(--lh-normal);
+}
+
+.body-secondary {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+}
+
+.label, label {
+  font-size: var(--fs-label);
+  font-weight: var(--fw-medium);
+  color: var(--text-secondary);
+}
+
+.eyebrow {
+  font-size: var(--fs-tiny);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+}
+
+.mono, code, kbd, pre {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+}
+
+.stat {
+  font-size: var(--fs-stat);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.stat-lg {
+  font-size: var(--fs-stat-lg);
+  font-weight: var(--fw-black);
+}
+
+/* ─── Custom scrollbar (used everywhere) ────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4B5563; }
