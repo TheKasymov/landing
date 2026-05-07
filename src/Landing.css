@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap');
+
+.landing-page {
+  --landing-bg: #0a1324;
+  --landing-card: rgba(11, 27, 53, 0.8);
+  --landing-border: rgba(114, 194, 255, 0.25);
+  --landing-text: #eff7ff;
+  --landing-muted: #9fb6cb;
+  --landing-accent: #26c281;
+  --landing-accent-2: #00a3ff;
+
+  min-height: 100vh;
+  background: radial-gradient(circle at 15% 0%, #16335f 0%, transparent 35%),
+              radial-gradient(circle at 85% 15%, #0c5e4a 0%, transparent 28%),
+              var(--landing-bg);
+  color: var(--landing-text);
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  font-family: 'Manrope', system-ui, sans-serif;
+}
+
+.landing-glow {
+  position: absolute;
+  filter: blur(64px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.landing-glow-a {
+  width: 360px;
+  height: 360px;
+  background: #1eb980;
+  top: -120px;
+  left: -100px;
+}
+
+.landing-glow-b {
+  width: 420px;
+  height: 420px;
+  background: #2a72ff;
+  right: -120px;
+  bottom: -140px;
+}
+
+.landing-header,
+.landing-main {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.landing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.landing-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.landing-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.landing-nav a {
+  color: var(--landing-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.landing-main {
+  display: grid;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+  margin: 0.6rem 0 1rem;
+  max-width: 900px;
+}
+
+.hero-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: #7dc2ff;
+  margin: 0;
+}
+
+.hero-copy {
+  max-width: 660px;
+  color: var(--landing-muted);
+  font-size: 1.05rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.landing-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.72rem 1.2rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.landing-btn:hover {
+  transform: translateY(-1px);
+}
+
+.landing-btn-primary {
+  background: linear-gradient(110deg, var(--landing-accent), var(--landing-accent-2));
+  color: #061321;
+  box-shadow: 0 12px 30px rgba(38, 194, 129, 0.28);
+}
+
+.landing-btn-ghost {
+  color: var(--landing-text);
+  border: 1px solid var(--landing-border);
+  background: rgba(8, 22, 44, 0.5);
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.highlight-card {
+  background: var(--landing-card);
+  border: 1px solid var(--landing-border);
+  border-radius: 1rem;
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.highlight-card h3 {
+  margin: 0.7rem 0 0.45rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.highlight-card p {
+  color: var(--landing-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.pricing {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.2rem;
+}
+
+.pricing-copy h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  margin: 0.7rem 0;
+}
+
+.pricing-copy p {
+  color: var(--landing-muted);
+  max-width: 560px;
+}
+
+.pricing-card {
+  background: linear-gradient(180deg, rgba(19, 48, 91, 0.9), rgba(8, 21, 43, 0.9));
+  border: 1px solid var(--landing-border);
+  border-radius: 1rem;
+  padding: 1.2rem;
+}
+
+.plan-name {
+  color: #80b8ff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.plan-price {
+  margin: 0.3rem 0 0.8rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.1rem;
+}
+
+.plan-price span {
+  font-size: 1rem;
+  color: var(--landing-muted);
+}
+
+.pricing-card ul {
+  margin: 0 0 1.2rem;
+  padding-left: 1.05rem;
+  color: var(--landing-muted);
+}
+
+.pricing-card li {
+  margin-bottom: 0.45rem;
+}
+
+@media (max-width: 960px) {
+  .highlights,
+  .pricing {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-nav {
+    display: none;
+  }
+}
